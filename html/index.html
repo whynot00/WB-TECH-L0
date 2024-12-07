@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Список</title>
+    </head>
+    <body>
+        <div class="wrap-container">   
+            <ul>
+                <li>
+                    <div class="wrap-li">
+                        <span>order_uid:</span> {{ .OrderUID }}
+                    </div>
+                </li> 
+                <li>
+                    <div class="wrap-li">
+                        <span>track_number:</span> {{ .TrackNumber }}
+                    </div>
+                </li>
+                <li>
+                    <div class="wrap-li">
+                        <span>entry:</span> {{ .Entry }}
+                    </div>
+                </li>
+                <li>
+                    <div class="wrap-li">
+                        <span>locale:</span> {{ .Locale }}
+                    </div>
+                </li>
+                <li>
+                    <div class="wrap-li">
+                        <span>internal_signature:</span> {{ .InternalSignature }}
+                    </div>
+                </li>
+                <li>
+                    <div class="wrap-li">
+                        <span>customer_id:</span> {{ .CustomerID }}
+                    </div>
+                </li>
+                <li>
+                    <div class="wrap-li">
+                        <span>delivery_service:</span> {{ .DeliveryService }}
+                    </div>
+                </li>
+                <li>
+                    <div class="wrap-li">
+                        <span>shardkey:</span> {{ .ShardKey }}
+                    </div>
+                </li>
+                <li>
+                    <div class="wrap-li">
+                        <span>sm_id:</span> {{ .SMID }}
+                    </div>
+                </li>
+                <li>
+                    <div class="wrap-li">
+                        <span>date_created:</span> {{ .DateCreated }}
+                    </div>
+                </li>
+                <li>
+                    <div class="wrap-li">
+                        <span>oof_shard:</span> {{ .OofShard }}
+                    </div>
+                </li>
+                <li>
+                    <div class="wrap-li">
+                        <span>delivery:</span> 
+                    </div>
+                    <ul>
+                        {
+                        <li>
+                            <div class="wrap-li">
+                                <span>name:</span> {{ .Delivery.Name }}
+                            </div>
+                        </li>
+                        <li>
+                            <div class="wrap-li">
+                                <span>phone:</span> {{ .Delivery.Phone }}
+                            </div>
+                        </li>
+                        <li>
+                            <div class="wrap-li">
+                                <span>zip:</span> {{ .Delivery.ZIP }}
+                            </div>
+                        </li>
+                        <li>
+                            <div class="wrap-li">
+                                <span>city:</span> {{ .Delivery.City }}
+                            </div>
+                        </li>
+                        <li>
+                            <div class="wrap-li">
+                                <span>address:</span> {{ .Delivery.Address }}
+                            </div>
+                        </li>
+                        <li>
+                            <div class="wrap-li">
+                                <span>region:</span> {{ .Delivery.Region }}
+                            </div>
+                        </li>
+                        <li>
+                            <div class="wrap-li">
+                                <span>email:</span> {{ .Delivery.Email }}
+                            </div>
+                        </li>}
+                    </ul>
+                </li>
+                <li>
+                    <div class="wrap-li">
+                        <span>payment:</span> 
+                    </div>
+                    <ul>
+                        {
+                        <li>
+                            <div class="wrap-li">
+                                <span>transaction:</span> {{ .Payment.Transaction }}
+                            </div>
+                        </li>
+                        <li>
+                            <div class="wrap-li">
+                                <span>request_id:</span> {{ .Payment.RequestID }}
+                            </div>
+                        </li>
+                        <li>
+                            <div class="wrap-li">
+                                <span>currency:</span> {{ .Payment.Currency }}
+                            </div>
+                        </li>
+                        <li>
+                            <div class="wrap-li">
+                                <span>provider:</span> {{ .Payment.Provider }}
+                            </div>
+                        </li>
+                        <li>
+                            <div class="wrap-li">
+                                <span>amount:</span> {{ .Payment.Amount }}
+                            </div>
+                        </li>
+                        <li>
+                            <div class="wrap-li">
+                                <span>payment_dt:</span> {{ .Payment.PaymentDT }}
+                            </div>
+                        </li>
+                        <li>
+                            <div class="wrap-li">
+                                <span>bank:</span> {{ .Payment.Bank }}
+                            </div>
+                        </li>
+                        <li>
+                            <div class="wrap-li">
+                                <span>delivery_cost:</span> {{ .Payment.DeliveryCost }}
+                            </div>
+                        </li>
+                        <li>
+                            <div class="wrap-li">
+                                <span>goods_total:</span> {{ .Payment.GoodsTotal }}
+                            </div>
+                        </li>
+                        <li>
+                            <div class="wrap-li">
+                                <span>custom_fee:</span> {{ .Payment.CustomFee }}
+                            </div>
+                        </li>}
+                    </ul>
+                </li>
+                <li>
+                    <div class="wrap-li">
+                        <span>items:</span> 
+                    </div>
+                    <ul>
+                        
+                        {{ range .Items }}
+                        {
+                            <li>
+                                <div class="wrap-li">
+                                    <span>item_id:</span> {{ .ID }}
+                                </div>
+                            </li>
+                            <li>
+                                <div class="wrap-li">
+                                    <span>chrt_id:</span> {{ .ChrtID }}
+                                </div>
+                            </li>
+                            <li>
+                                <div class="wrap-li">
+                                    <span>track_number:</span> {{ .TrackNumber }}
+                                </div>
+                            </li>
+                            <li>
+                                <div class="wrap-li">
+                                    <span>price:</span> {{ .Price }}
+                                </div>
+                            </li>
+                            <li>
+                                <div class="wrap-li">
+                                    <span>rid:</span> {{ .RID }}
+                                </div>
+                            </li>
+                            <li>
+                                <div class="wrap-li">
+                                    <span>name:</span> {{ .Name }}
+                                </div>
+                            </li>
+                            <li>
+                                <div class="wrap-li">
+                                    <span>sale:</span> {{ .Sale }}
+                                </div>
+                            </li>
+                            <li>
+                                <div class="wrap-li">
+                                    <span>size:</span> {{ .Size }}
+                                </div>
+                            </li>
+                            <li>
+                                <div class="wrap-li">
+                                    <span>total_price:</span> {{ .TotalPrice }}
+                                </div>
+                            </li>
+                            <li>
+                                <div class="wrap-li">
+                                    <span>nm_id:</span> {{ .NMID }}
+                                </div>
+                            </li>
+                            <li>
+                                <div class="wrap-li">
+                                    <span>brand:</span> {{ .Brand }}
+                                </div>
+                            </li>
+                            <li>
+                                <div class="wrap-li">
+                                    <span>status:</span> {{ .Status }}
+                                </div>
+                            </li>
+                        }
+                        {{ end }}
+                    
+                    </ul>
+                </li>
+            </ul>
+
+        </div>
+    </body>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+        body {
+            font-family: 'Roboto';
+        }
+
+        .wrap-container {
+            width: 1024px;
+            height: auto;
+            margin: 0 auto;
+            border-radius: 15px;
+            background-color: rgb(244, 244, 244);
+            padding: 10px;
+        }
+
+        .wrap-container ul {
+            list-style-type: none;
+        }
+
+        .wrap-li {
+            width: 600px;
+            padding: 5px 0 5px 0;
+        }
+        .wrap-li {
+            font-family: "Roboto", sans-serif;
+            font-weight: 700;
+            font-style: normal;
+            color: #383838;
+        }
+
+        .wrap-li span {
+            font-family: "Roboto", serif;
+            font-weight: 300;
+            font-style: normal;
+            color: #6b6b6b;
+            
+        }
+    </style>
+</html>

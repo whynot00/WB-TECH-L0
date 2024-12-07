@@ -1,0 +1,24 @@
+
+environment: "local"
+
+http:
+  host: "localhost"
+  port: "80"
+
+postgres:
+  host: "localhost"
+  port: "5432"
+  username: "postgres"
+  password: "21102240Ss" # перенести в переменную окружения
+  dbname: "orders"
+  sslmode: "disable"
+
+kafka:
+  topic: "orders"
+  consumer_group: "orders-group"
+  session_timeout: 6000
+  auto_commit_inteval: 5000
+  bootstrap_servers:
+    - "localhost:9091"
+    - "localhost:9092"
+    - "localhost:9093"
