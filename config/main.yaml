@@ -9,7 +9,7 @@ postgres:
   host: "localhost"
   port: "5432"
   username: "postgres"
-  password: "21102240Ss" # перенести в переменную окружения
+  password: "1234" # перенести в переменную окружения
   dbname: "orders"
   sslmode: "disable"
 
