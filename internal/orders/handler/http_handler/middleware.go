@@ -24,7 +24,6 @@ func (h *Handler) Logging(c *gin.Context) {
 		RequestID:     requestid.Get(c),
 		RequestURI:    c.Request.Host + c.Request.RequestURI,
 		RequestSize:   c.Writer.Size(),
-		ClientIP:      c.GetHeader("X-Forwarded-For"),
 		Errors:        len(c.Errors),
 	}
 

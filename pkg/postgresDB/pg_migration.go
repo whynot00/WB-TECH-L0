@@ -93,24 +93,3 @@ func migration(db *sqlx.DB) error {
 
 	return nil
 }
-
-/*
-
-
-
-
-
-create table if not exists payment
-(
-
-
-);
-
-create table if not EXISTS items
-(
-
-);
-
-
-
-*/

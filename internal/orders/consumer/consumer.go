@@ -15,7 +15,7 @@ const (
 )
 
 type Handler interface {
-	MessageHandler(message []byte, offset kafka.Offset) error
+	MessageHandler(message []byte) error
 	MigrateOrdersFromDB()
 }
 
@@ -77,19 +77,20 @@ func (c *Consumer) Start() {
 			continue
 		}
 
-		if err := c.handler.MessageHandler(kafkaMsg.Value, kafkaMsg.TopicPartition.Offset); err != nil {
+		if err := c.handler.MessageHandler(kafkaMsg.Value); err != nil {
 			switch err {
 
 			// валидация сообщения
 			case models.JSONUnmarshalError: // в случае не соответствии модели orders
 				c.logger.Warn("unexpected message content")
+			case models.EmptyOrderIDError:
+				c.logger.Warn(err.Error())
 			default: // иные ошибки
 				c.logger.Error("error with handle kaffka message", slog.Any("error", err))
 			}
 			continue
 		}
 
-		// подтверждение обратботки сообщения
 		if _, err := c.consumer.StoreMessage(kafkaMsg); err != nil {
 			c.logger.Error("error with offset kaffka message", slog.Any("error", err))
 			continue

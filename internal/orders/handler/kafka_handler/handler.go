@@ -5,8 +5,6 @@ import (
 	"kaf-interface/internal/orders/models"
 	"kaf-interface/internal/orders/service"
 	"log/slog"
-
-	"github.com/confluentinc/confluent-kafka-go/kafka"
 )
 
 type Handler struct {
@@ -22,7 +20,7 @@ func NewHandler(service *service.Service, logger *slog.Logger) *Handler {
 	}
 }
 
-func (h *Handler) MessageHandler(message []byte, offset kafka.Offset) error {
+func (h *Handler) MessageHandler(message []byte) error {
 
 	var order models.Order
 

@@ -30,7 +30,7 @@ func (h *Handler) InitRouters(config *config.Config) *gin.Engine {
 	router.Use(requestid.New()) // создание requestid для трейсинга запросов
 	router.Use(h.Logging)       // логгирование запроса
 
-	router.GET("/orderd_id/:id", h.GetOrderByID)
+	router.GET("/orders_id/:id", h.GetOrderByID) // http://localhost/orders_id/orderidtest1111
 
 	return router
 }
